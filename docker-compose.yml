@@ -1,0 +1,30 @@
+services:
+  
+  ros-jazzy-nav:					# Compose service name (internal identifier)
+    build:
+      context: .			
+    image: ros-jazzy-nav				# Name of the Docker image that will be used - must have been build before - docker build -t ros-jazzy-img .
+    container_name: ros-jazzy-nav			# Final name of running container
+    privileged: true
+    network_mode: host
+    ipc: host
+    stdin_open: true
+    tty: true
+    gpus : all
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=42       
+    volumes:
+      - /dev:/dev:rw
+      - /media:/media:rw
+      - /etc/timezone:/etc/timezone:rw
+      - /etc/localtime:/etc/localtime:rw
+      #ros-workspaces
+      - ./ws:/root/ros_jazzy_ws/:rw
+      - ~/Documents/Developpements/ROSBAGS/:/root/bag/:rw       
+    entrypoint: /bin/bash    
+    
+    
+    
+    
