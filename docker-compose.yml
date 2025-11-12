@@ -11,7 +11,9 @@ services:
     stdin_open: true
     tty: true
     gpus : all
+    runtime: nvidia            
     environment:
+      - NVIDIA_VISIBLE_DEVICES=all
       - DISPLAY
       - QT_X11_NO_MITSHM=1
       - ROS_DOMAIN_ID=42       

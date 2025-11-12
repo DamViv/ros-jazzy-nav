@@ -84,7 +84,7 @@ WORKDIR /root/ros_jazzy_ws
 # ROS2 environment setting for root user
 RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc
 RUN echo "source /root/ros_jazzy_ws/install/setup.bash" >> /root/.bashrc
-RUN echo "source /opt/ros/jazzy/setup.bash && cd /root/ros_jazzy_ws && colcon build"
+RUN echo "source /opt/ros/jazzy/setup.bash && cd /root/ros_jazzy_ws && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release"
 
 RUN echo 'alias start_simu="ros2 launch rover_gz_bringup startSimulator.launch.py"' >> ~/.bashrc
 
