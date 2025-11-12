@@ -15,7 +15,7 @@
     [[[term1]]]
       type = Terminal
       parent = vsplit
-      command = bash -c "source /opt/ros/jazzy/setup.bash && source /root/ros_jazzy_ws/install/setup.bash && rviz2; exec bash"
+      command = bash -c "source /opt/ros/jazzy/setup.bash && source /root/ros_jazzy_ws/install/setup.bash && rviz2 -d /root/ros_jazzy_ws/src/multi-robot-gz-simulator/config/rviz_fleet.rviz; exec bash"
     [[[term2]]]
       type = Terminal
       parent = vsplit
